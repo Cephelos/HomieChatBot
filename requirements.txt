@@ -1,7 +1,0 @@
-Flask
-Flask-Session
-gunicorn
-psycopg2
-requests
-openai
-langchain
