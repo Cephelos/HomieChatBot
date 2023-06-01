@@ -1,0 +1,14 @@
+Flask
+Flask-Session
+gunicorn
+psycopg2
+requests
+random
+json
+openai
+langchain.document_loaders.base
+langchain.indexes
+langchain.utilities
+langchain.chains
+langchain.llms
+os
