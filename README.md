@@ -1,2 +1,0 @@
-# AutoChatBot
-Readyly Chat Bot
