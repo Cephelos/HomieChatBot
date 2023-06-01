@@ -47,7 +47,7 @@ index = VectorstoreIndexCreator().from_loaders([loader])
 
 
 def get_response(msg):
-    query = "How do I get your pizza?"
+    query = msg
     result = index.query_with_sources(query)
 
     return result["answer"]
