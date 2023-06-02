@@ -6,3 +6,5 @@ requests
 openai
 langchain
 apify-client
+pinecone-client[grpc]
+tiktoken
