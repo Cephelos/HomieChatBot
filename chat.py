@@ -15,8 +15,8 @@ import os
 os.environ["OPENAI_API_KEY"] = "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"
 os.environ["APIFY_API_TOKEN"] = "apify_api_vYzWRLX7dHb1H4qE7WjjsPhNPNoMf52QVzli"
 
-PINECONE_API_KEY = "38ab2900-421b-4c91-9aeb-90533fd173f7"
-PINECONE_ENV = "us-west4-gcp-free"
+PINECONE_API_KEY = "bab0e3e6-b740-4586-9098-7c515b6abd47"
+PINECONE_ENV = "us-west1-gcp"
 
 pinecone.init(api_key=PINECONE_API_KEY, environment=PINECONE_ENV)
 
