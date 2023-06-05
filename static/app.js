@@ -47,7 +47,7 @@ class Chatbox {
             return;
         }
 
-        let msg1 = { name: "User", message: text1}
+        let msg1 = { name: "User", message: text1, link: false}
 
         this.messages.push(msg1);
         
@@ -67,8 +67,9 @@ class Chatbox {
         .then(r => {
             console.log(r.answer);
 
-            let msg2 = { name: "Sam", message: r.answer };
+            let msg2 = { name: "Sam", message: r.answer};
             console.log(msg2.message);
+
             this.messages.push(msg2);
             this.updateChatText(chatbox)
             textField.value = ''
@@ -88,6 +89,7 @@ class Chatbox {
             if (item.name === "Sam")
             {
                 html += '<div class="messages__item messages__item--visitor">' + item.message + '</div>'
+
             }
             else {
                 html += '<div class="messages__item messages__item--operator">' + item.message + '</div>'
