@@ -1,5 +1,5 @@
 import json
-import openai
+#import openai
 from langchain.document_loaders.base import Document
 from langchain.indexes import VectorstoreIndexCreator
 from langchain.utilities import ApifyWrapper
@@ -18,7 +18,7 @@ from langchain.vectorstores import Pinecone
 
 client = ApifyClient("apify_api_5PWQzTgoKpZmu1kjwdWDIdNcs4W6Io25Nga8")
 
-url = ""
+url = "http://help.rupahealth.com/en/"
 
 apify = ApifyWrapper()
 
@@ -61,10 +61,10 @@ embeddings = OpenAIEmbeddings()
 
 res = embeddings.embed_documents(data_list[0]['text'])
 
-PINECONE_API_KEY = "38ab2900-421b-4c91-9aeb-90533fd173f7"
-PINECONE_ENV = "us-west4-gcp-free"
+PINECONE_API_KEY = "bab0e3e6-b740-4586-9098-7c515b6abd47"
+PINECONE_ENV = "us-west4-gcp"
 
-index_name = 'langchain-apify-test'
+index_name = 'langchain-rupa-health-practitioners'
 
 pinecone.init(api_key=PINECONE_API_KEY, environment=PINECONE_ENV)
 

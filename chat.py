@@ -4,7 +4,7 @@ import openai
 from langchain.document_loaders.base import Document
 from langchain.indexes import VectorstoreIndexCreator
 from langchain.utilities import ApifyWrapper
-from langchain.chains import RetrievalQA
+from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
 from langchain.vectorstores import Pinecone
@@ -70,14 +70,18 @@ llm = ChatOpenAI(
     temperature=0.0,
 )
 
-qa = RetrievalQA.from_chain_type(
+qa = RetrievalQAWithSourcesChain.from_chain_type(
     llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever()
 )
+
 
 
 def get_response(msg):
     query = msg
     result = qa.run(query)
  
-    return result
+    sources = result['output_text'].split('\nSOURCES: ')[-1]
+    source_urls = [s.split('- ')[-1] for s in sources.split(', ')]
+
+    return source_urls
 

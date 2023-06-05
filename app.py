@@ -26,7 +26,7 @@ def predict():
 
     response = get_response(text)
     
-    message = {"answer": response.metadata}
+    message = {"answer": response}
 
     print("in:" + text)
     print(jsonify(message))
