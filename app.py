@@ -25,8 +25,8 @@ def predict():
     # TODO: check text validity
 
     response = get_response(text)
-
-    message = {"answer": response}
+    
+    message = {"answer": response.metadata}
 
     print("in:" + text)
     print(jsonify(message))
