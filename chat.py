@@ -79,3 +79,4 @@ def get_response(msg):
     query = msg
     result = qa.run(query)
     return result
+
