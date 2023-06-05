@@ -76,6 +76,8 @@ PROMPT = PromptTemplate(
     template=prompt_template, input_variables=["context", "question"]
 )
 
+chain_type_kwargs = {"prompt": PROMPT}
+
 llm = ChatOpenAI(
     openai_api_key="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",
     model_name="gpt-3.5-turbo",
