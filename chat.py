@@ -78,10 +78,9 @@ qa = RetrievalQAWithSourcesChain.from_chain_type(
 
 def get_response(msg):
     query = msg
-    result = qa.run(query)
- 
-    sources = result['output_text'].split('\nSOURCES: ')[-1]
-    source_urls = [s.split('- ')[-1] for s in sources.split(', ')]
+    result = qa({"question": query}, return_only_outputs=True)
+    
+    return result
 
-    return source_urls
+
 

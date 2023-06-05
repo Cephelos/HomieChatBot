@@ -25,8 +25,10 @@ def predict():
     # TODO: check text validity
 
     response = get_response(text)
+    answer = response['answer']
+    sources = response['sources']
     
-    message = {"answer": response}
+    message = {"answer": answer + "\n\n" + sources}
 
     print("in:" + text)
     print(jsonify(message))
