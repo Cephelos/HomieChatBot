@@ -78,5 +78,6 @@ qa = RetrievalQA.from_chain_type(
 def get_response(msg):
     query = msg
     result = qa.run(query)
+    print(result.metadata["source"])
     return result
 
