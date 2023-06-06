@@ -1,3 +1,7 @@
+const query_string = window.location.search
+const urlParams = new URLSearchParams(query_string);
+const index = urlParams.get("index")
+
 class Chatbox {
     constructor() {
         this.args = {
@@ -47,7 +51,7 @@ class Chatbox {
             return;
         }
 
-        let msg1 = { name: "User", message: text1, link: false}
+        let msg1 = { name: "User", message: text1}
 
         this.messages.push(msg1);
         
@@ -57,7 +61,7 @@ class Chatbox {
 
         fetch($SCRIPT_ROOT + '/predict' , {
             method: 'POST',
-            body: JSON.stringify({ message: text1}),
+            body: JSON.stringify({ query: text1, index_name: index}),
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
@@ -67,9 +71,8 @@ class Chatbox {
         .then(r => {
             console.log(r.answer);
 
-            let msg2 = { name: "Sam", message: r.answer};
+            let msg2 = { name: "Sam", message: r.answer };
             console.log(msg2.message);
-
             this.messages.push(msg2);
             this.updateChatText(chatbox)
             textField.value = ''
@@ -89,7 +92,6 @@ class Chatbox {
             if (item.name === "Sam")
             {
                 html += '<div class="messages__item messages__item--visitor">' + item.message + '</div>'
-
             }
             else {
                 html += '<div class="messages__item messages__item--operator">' + item.message + '</div>'
