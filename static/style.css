@@ -64,7 +64,7 @@ body {
     border-bottom-right-radius: 14px;
 }
 
-.fullscreen_button {
+.fullscreen__button {
     padding: 9px;
     background: #ffbcad;
     border: none;
@@ -221,9 +221,7 @@ body {
 
 /* The Modal (background) */
 .chatbox__fullscreen {
-    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
@@ -232,6 +230,15 @@ body {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    opacity: 0;
+    z-index: -123456;
+    transition: all .5s ease-in-out;
+}
+
+.fullscreen--active {
+    z-index: 1234567;
+    opacity: 1;
+
 }
 
 /* Modal Content */
@@ -261,15 +268,15 @@ body {
 }
 
 /* The Close Button */
-.close {
+.fullscreen__close {
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.fullscreen__close:hover,
+.fullscreen__close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -277,7 +284,7 @@ body {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #F27A5F;
     color: white;
 height:10%;
 }
@@ -290,8 +297,8 @@ height:10%;
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #F27A5F;
     color: white;
-/*postion:fixed;*/
-height:15%;
+    postion:fixed;
+    height:15%;
 }
