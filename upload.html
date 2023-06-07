@@ -15,10 +15,8 @@
                     <!img src="chatbot-deployment/templates/Readyly_Logo.png" alt="image">
                 </div -->
                 <div class="chatbox__content--header">
-                    <h4 class="chatbox__heading--header">Rupa Health Chat Support</h4>
-                    <p class="chatbox__description--header">How can I help you?</p>
-                    <button class="chatbox__send--footer fullscreen__button">Full Screen</button>
-                    <button class="chatbox__send--footer enlarge__button">Enlarge</button>
+                    <h4 class="chatbox__heading--header">URL Upload</h4>
+                    <p class="chatbox__description--header">Please enter the URL of your desired help center or website</p>
                 </div>
             </div>
             <div class="chatbox__messages">
@@ -27,41 +25,18 @@
             <div class="chatbox__footer">
                 <input type="text" placeholder="Write a message...">
                 <button class="chatbox__send--footer send__button">Send</button>
-                
             </div>
         </div>
         <div class="chatbox__button">
             <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
         </div>
     </div>
-    <!-- The Modal -->
-    <div id="myModal" class="chatbox__fullscreen">
-
-        <!-- Modal content -->
-        <div style="width:100%;height:100vh;margin-top:-100px" class="modal-content">
-        <div class="modal-header">
-            <span class="fullscreen__close">&times;</span>
-            <h2>Rupa Health Chat Support</h2>
-            <p>How can I help you?</p>
-        </div>
-        <div class="modal-body chatbox__messages">
-            <div></div>
-        </div>
-        <div class="modal-footer">
-            <input type="text" placeholder="Write a message...">
-            <button class="chatbox__send--footer send__button">Send</button>
-        </div>
-    </div>
-
 </div>
-
-</div>
-
 
     <script>
         $SCRIPT_ROOT = {{ request.script_root|tojson }};
     </script>
-    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='newUrl.js') }}"></script>
 
 </body>
 </html>
