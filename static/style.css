@@ -76,18 +76,6 @@ body {
     border-bottom-right-radius: 14px;
 }
 
-.enlarge__button {
-    padding: 9px;
-    background: #ffbcad;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    border-top-left-radius: 14px;
-    border-top-right-radius: 14px;
-    border-bottom-left-radius: 14px;
-    border-bottom-right-radius: 14px;
-}
-
 
 /* HEADER */
 
@@ -127,11 +115,6 @@ body {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-}
-
-.chatbox--enlarged {
-    width: 600px;
-    height: 700px;
 }
 
 /* HEADER */

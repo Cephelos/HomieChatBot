@@ -4,7 +4,6 @@ class Chatbox {
             openButton: document.querySelector('.chatbox__button'),
             fullscreenButton: document.querySelector('.fullscreen__button'),
             fullscreenCloseButton: document.querySelector('.fullscreen__close'),
-            enlargeButton: document.querySelector('.enlarge__button'),
             chatBox: document.querySelector('.chatbox__support'),
             fullscreenChat: document.querySelector('.chatbox__fullscreen'),
             sendButton1: document.querySelectorAll('.send__button')[0],
@@ -14,19 +13,16 @@ class Chatbox {
         console.log(this.args);
 
         this.chatBoxState = false;
-        this.chatBoxEnlargedState = false;
         this.fullscreenState = false;
         this.messages = [];
     }
 
     display() {
-        const {openButton, fullscreenButton, fullscreenCloseButton, enlargeButton, chatBox, fullscreenChat, sendButton1, sendButton2} = this.args
+        const {openButton, fullscreenButton, fullscreenCloseButton, chatBox, fullscreenChat, sendButton1, sendButton2} = this.args
 
-        console.log(enlargeButton);
         openButton.addEventListener("click", () => this.toggleChatBoxState(chatBox));
         fullscreenButton.addEventListener("click", () => this.toggleFullscreenState(fullscreenChat));
         fullscreenCloseButton.addEventListener("click", () => this.toggleFullscreenState(fullscreenChat));
-        enlargeButton.addEventListener("click", () => this.toggleEnlargeState(chatBox));
         sendButton1.addEventListener('click', () => this.onSendButton(chatBox, fullscreenChat));
         sendButton2.addEventListener('click', () => this.onSendButton(chatBox, fullscreenChat));
 
@@ -47,6 +43,7 @@ class Chatbox {
     }
 
     toggleChatBoxState(chatbox) {
+        
 
         this.chatBoxState = !this.chatBoxState;
 
@@ -55,18 +52,6 @@ class Chatbox {
         }
         else {
             chatbox.classList.remove('chatbox--active')
-        }
-    }
-
-    toggleEnlargeState(chatbox) {
-
-        this.chatBoxEnlargedState = !this.chatBoxEnlargedState;
-
-        if (this.chatBoxEnlargedState) {
-            chatbox.classList.add('chatbox--enlarged')
-        }
-        else {
-            chatbox.classList.remove('chatbox--enlarged')
         }
     }
 
