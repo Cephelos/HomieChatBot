@@ -87,16 +87,16 @@ class Chatbox {
         var textField1 = chatbox.querySelector('input');
         var textField2 = fullscreenChat.querySelector('input');
         let text1 = "";
-        if (textField1.value === "" && textField2.value === "") {
-            return;
-        }
-        else if (textField1.value === "") {
+        if (textField1.value === "") {
             text1 = textField2.value;
         }
         else if (textField2.value === "") {
             text1 = textField1.value;
         }
-        
+        else {
+            return;
+        }
+
         let msg1 = { name: "User", message: text1, link: false};
 
         this.messages.push(msg1);
