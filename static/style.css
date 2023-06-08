@@ -13,11 +13,11 @@ body {
 }
 
 html {
-    --primaryGradient: linear-gradient(93.12deg, #F27A5F 0.52%, #f69c84 100%);
-    --secondaryGradient: linear-gradient(268.91deg, #f69c84 -2.14%, #F27A5F 99.69%);
+    --primaryGradient: linear-gradient(93.12deg, #6ACEC3 0.52%, #E5FBF8 100%);
+    --secondaryGradient: linear-gradient(268.91deg, #E5FBF8 -2.14%, #6ACEC3 99.69%);
     --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
-    --primary: #F27A5F;
+    --primary: #6ACEC3;
     height: 100%
 }
 
@@ -69,7 +69,7 @@ html {
 
 .send__button {
     padding: 9px;
-    background: #ffbcad;
+    background: #E5FBF8;
     border: none;
     outline: none;
     cursor: pointer;
@@ -87,7 +87,7 @@ html {
 
 .enlarge__button {
     padding: 9px;
-    background: #ffbcad;
+    background: #E5FBF8;
     border: none;
     outline: none;
     cursor: pointer;
@@ -110,7 +110,7 @@ html {
 }
 
 .messages__item {
-    background: orange;
+    background: palegreen;
     max-width: 60.6%;
     width: fit-content;
 }
@@ -342,7 +342,7 @@ html {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #F27A5F;
+    background-color: #6ACEC3;
     color: white;
 height:7%;
 }
