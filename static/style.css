@@ -9,15 +9,30 @@ body {
     font-weight: 400;
     font-size: 100%;
     background: #F1F1F1;
+    height: 100%
 }
 
-*, html {
+html {
     --primaryGradient: linear-gradient(93.12deg, #F27A5F 0.52%, #f69c84 100%);
     --secondaryGradient: linear-gradient(268.91deg, #f69c84 -2.14%, #F27A5F 99.69%);
     --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
     --primary: #F27A5F;
+    height: 100%
 }
+
+.bg {
+    /* The image used */
+    background-image: url('images/Backgrounds/Homie Background.jpg');
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
 /* CHATBOX
 =============== */
@@ -64,16 +79,10 @@ body {
     border-bottom-right-radius: 14px;
 }
 
-.fullscreen__button {
-    padding: 9px;
-    background: #ffbcad;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    border-top-left-radius: 14px;
-    border-top-right-radius: 14px;
-    border-bottom-left-radius: 14px;
-    border-bottom-right-radius: 14px;
+.fullscreen__button--icon {
+    background: transparent;
+    border: 0;
+
 }
 
 .enlarge__button {
@@ -121,6 +130,8 @@ body {
 }
 
 .chatbox__support {
+    display: flex;
+    flex: 1 1 auto;
     background: #f9f9f9;
     height: 450px;
     width: 350px;
@@ -134,14 +145,21 @@ body {
     height: 700px;
 }
 
+@media screen and (max-height: 850px) {
+    .chatbox--enlarged {
+        height: calc(100vh - 150px)
+    }
+}
+
+
 /* HEADER */
 .chatbox__header {
     background: var(--primaryGradient);
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: left;
-    padding: 15px 20px;
+    justify-content: space-between;
+    padding: 15px 20px; 
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     box-shadow: var(--primaryBoxShadow);
@@ -240,9 +258,9 @@ body {
 .chatbox__fullscreen {
     position: fixed; /* Stay in place */
     padding-top: 100px; /* Location of the box */
-    left: 0;
+    right: 0;
     top: 0;
-    width: 100%; /* Full width */
+    width: 400px;
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
@@ -256,6 +274,29 @@ body {
     z-index: 1234567;
     opacity: 1;
 
+}
+
+@media screen and (max-width: 768px) {
+    .chatbox__fullscreen {
+        width: 100%;
+    }   
+    
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+    transition: all .5s ease-in-out;
+}
+
+.lightbox--active {
+    display: block;
 }
 
 /* Modal Content */
@@ -303,19 +344,17 @@ body {
     padding: 2px 16px;
     background-color: #F27A5F;
     color: white;
-height:10%;
+height:7%;
 }
 
 .modal-body {
     padding: 2px 16px;
-    height: 75%;
+    height: 83%;
     overflow: auto;
 }
 
-.modal-footer {
-    padding: 2px 16px;
-    background-color: #F27A5F;
-    color: white;
-    postion:fixed;
-    height:15%;
+.fullscreen__footer {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    height: 8%
 }

@@ -7,6 +7,7 @@ class Chatbox {
             enlargeButton: document.querySelector('.enlarge__button'),
             chatBox: document.querySelector('.chatbox__support'),
             fullscreenChat: document.querySelector('.chatbox__fullscreen'),
+            lightbox: document.querySelector('.lightbox'),
             sendButton1: document.querySelectorAll('.send__button')[0],
             sendButton2: document.querySelectorAll('.send__button')[1]
         }
@@ -20,13 +21,14 @@ class Chatbox {
     }
 
     display() {
-        const {openButton, fullscreenButton, fullscreenCloseButton, enlargeButton, chatBox, fullscreenChat, sendButton1, sendButton2} = this.args
+        const {openButton, fullscreenButton, fullscreenCloseButton, enlargeButton, chatBox, fullscreenChat, lightbox, sendButton1, sendButton2} = this.args
 
-        console.log(enlargeButton);
         openButton.addEventListener("click", () => this.toggleChatBoxState(chatBox));
-        fullscreenButton.addEventListener("click", () => this.toggleFullscreenState(fullscreenChat));
-        fullscreenCloseButton.addEventListener("click", () => this.toggleFullscreenState(fullscreenChat));
-        enlargeButton.addEventListener("click", () => this.toggleEnlargeState(chatBox));
+        fullscreenButton.addEventListener("click", () => this.toggleFullscreenState(fullscreenChat, lightbox));
+        fullscreenButton.addEventListener("click", () => this.toggleChatBoxState(chatBox));
+        fullscreenCloseButton.addEventListener("click", () => this.toggleFullscreenState(fullscreenChat, lightbox));
+        fullscreenCloseButton.addEventListener("click", () => this.toggleChatBoxState(chatBox));
+        // enlargeButton.addEventListener("click", () => this.toggleEnlargeState(chatBox));
         sendButton1.addEventListener('click', () => this.onSendButton(chatBox, fullscreenChat));
         sendButton2.addEventListener('click', () => this.onSendButton(chatBox, fullscreenChat));
 
@@ -35,13 +37,13 @@ class Chatbox {
 
         node1.addEventListener("keyup", ({key}) => {
             if (key == "Enter") {
-                this.onSendButton(chatBox, fullscreenChat)
+                this.onSendButton(chatBox, fullscreenChat);
             }
         })
 
         node2.addEventListener("keyup", ({key}) => {
             if (key == "Enter") {
-                this.onSendButton(chatBox, fullscreenChat)
+                this.onSendButton(chatBox, fullscreenChat);
             }
         })
     }
@@ -51,10 +53,10 @@ class Chatbox {
         this.chatBoxState = !this.chatBoxState;
 
         if (this.chatBoxState) {
-            chatbox.classList.add('chatbox--active')
+            chatbox.classList.add('chatbox--active');
         }
         else {
-            chatbox.classList.remove('chatbox--active')
+            chatbox.classList.remove('chatbox--active');
         }
     }
 
@@ -63,23 +65,25 @@ class Chatbox {
         this.chatBoxEnlargedState = !this.chatBoxEnlargedState;
 
         if (this.chatBoxEnlargedState) {
-            chatbox.classList.add('chatbox--enlarged')
+            chatbox.classList.add('chatbox--enlarged');
         }
         else {
-            chatbox.classList.remove('chatbox--enlarged')
+            chatbox.classList.remove('chatbox--enlarged');
         }
     }
 
-    toggleFullscreenState(fullscreeenChat) {
+    toggleFullscreenState(fullscreeenChat, lightbox) {
         
 
         this.fullscreenState = !this.fullscreenState;
 
         if (this.fullscreenState) {
-            fullscreeenChat.classList.add('fullscreen--active')
+            fullscreeenChat.classList.add('fullscreen--active');
+            lightbox.classList.add('lightbox--active');
         }
         else {
-            fullscreeenChat.classList.remove('fullscreen--active')
+            fullscreeenChat.classList.remove('fullscreen--active');
+            lightbox.classList.remove('lightbox--active');
         }
     }
 

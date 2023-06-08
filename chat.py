@@ -59,7 +59,7 @@ embeddings = OpenAIEmbeddings()
 # index = VectorstoreIndexCreator().from_loaders([loader])
 
 text_field = "text"
-index_name = "langchain-rupa-health-practitioners"
+index_name = "homie"
 
 index = pinecone.Index(index_name)
 

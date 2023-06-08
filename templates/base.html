@@ -1,67 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chatbot</title>
+    </head>
+    <body>
+        <div class="container bg">
+            <div class="lightbox">
+            </div>
+            <div class="chatbox">
+                <div class="chatbox__support">
+                    <div class="chatbox__header">
+                        <!--div class="chatbox__image--header">
+                            <!img src="chatbot-deployment/templates/Readyly_Logo.png" alt="image">
+                            </div -->
+                        <div class="chatbox__content--header">
+                            <h4 class="chatbox__heading--header">Homie Chat Support</h4>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Chatbot</title>
-</head>
-<body>
-<div class="container">
-    <div class="chatbox">
-        <div class="chatbox__support">
-            <div class="chatbox__header">
-                <!--div class="chatbox__image--header">
-                    <!img src="chatbot-deployment/templates/Readyly_Logo.png" alt="image">
-                </div -->
-                <div class="chatbox__content--header">
-                    <h4 class="chatbox__heading--header">Rupa Health Chat Support</h4>
-                    <p class="chatbox__description--header">How can I help you?</p>
-                    <button class="chatbox__send--footer fullscreen__button">Full Screen</button>
-                    <button class="chatbox__send--footer enlarge__button">Enlarge</button>
+                            
+                            <h5 class="chatbox__description--header">How can I help you?</h5>
+                            <!-- button class="chatbox__send--footer enlarge__button">Enlarge</button -->
+                        </div>
+                        <div class="fullscreen__button">
+                            <button class="fullscreen__button--icon"><img src="{{ url_for('static', filename='images/Expand_Arrow.png') }}" style="width: 70%;" /></button>
+                        </div>
+                    </div>
+                    <div class="chatbox__messages">
+                        <div></div>
+                    </div>
+                    <div class="chatbox__footer">
+                        <input type="text" placeholder="Write a message...">
+                        <button class="chatbox__send--footer send__button">Send</button>
+                    </div>
+                </div>
+                <div class="chatbox__button">
+                    <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
                 </div>
             </div>
-            <div class="chatbox__messages">
-                <div></div>
+            <!-- The Modal -->
+            <div class="chatbox__fullscreen">
+                <!-- Modal content -->
+                <div style="width:100%;height:100vh;margin-top:-100px" class="modal-content">
+                    <div class="modal-header">
+                        <span class="fullscreen__close">&times;</span>
+                        <h2>Homie Chat Support</h2>
+                        <p>How can I help you?</p>
+                    </div>
+                    <div class="modal-body chatbox__messages">
+                        <div></div>
+                    </div>
+                    <div class="chatbox__footer fullscreen__footer ">
+                        <input type="text" placeholder="Write a message...">
+                        <button class="chatbox__send--footer send__button">Send</button>
+                    </div>
+                </div>
             </div>
-            <div class="chatbox__footer">
-                <input type="text" placeholder="Write a message...">
-                <button class="chatbox__send--footer send__button">Send</button>
-                
-            </div>
         </div>
-        <div class="chatbox__button">
-            <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
-        </div>
-    </div>
-    <!-- The Modal -->
-    <div id="myModal" class="chatbox__fullscreen">
-
-        <!-- Modal content -->
-        <div style="width:100%;height:100vh;margin-top:-100px" class="modal-content">
-        <div class="modal-header">
-            <span class="fullscreen__close">&times;</span>
-            <h2>Rupa Health Chat Support</h2>
-            <p>How can I help you?</p>
-        </div>
-        <div class="modal-body chatbox__messages">
-            <div></div>
-        </div>
-        <div class="modal-footer">
-            <input type="text" placeholder="Write a message...">
-            <button class="chatbox__send--footer send__button">Send</button>
-        </div>
-    </div>
-
-</div>
-
-</div>
-
-
-    <script>
-        $SCRIPT_ROOT = {{ request.script_root|tojson }};
-    </script>
-    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
-
-</body>
+        <script>
+            $SCRIPT_ROOT = {{ request.script_root|tojson }};
+        </script>
+        <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+    </body>
 </html>
