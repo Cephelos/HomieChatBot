@@ -115,7 +115,8 @@ class Chatbox {
             body: JSON.stringify({ message: text1}),
             mode: 'cors',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${process.env.API_Key}`
             },
         })
         .then(r => r.json())
