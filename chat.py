@@ -79,7 +79,7 @@ PROMPT = PromptTemplate(
 chain_type_kwargs = {"prompt": PROMPT}
 
 llm = ChatOpenAI(
-    openai_api_key="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",
+    openai_api_key= os.getenv("API_Key"),
     model_name="gpt-3.5-turbo",
     temperature=0.0,
 )
