@@ -23,6 +23,7 @@ class Chatbox {
     display() {
         const {openButton, fullscreenButton, fullscreenCloseButton, enlargeButton, chatBox, fullscreenChat, lightbox, sendButton1, sendButton2} = this.args
 
+        console.log(fullscreenChat);
         openButton.addEventListener("click", () => this.toggleChatBoxState(chatBox));
         fullscreenButton.addEventListener("click", () => this.toggleFullscreenState(fullscreenChat, lightbox));
         fullscreenButton.addEventListener("click", () => this.toggleChatBoxState(chatBox));
@@ -108,7 +109,7 @@ class Chatbox {
         textField1.value = '';
         textField2.value = '';
         this.updateChatText(chatbox, fullscreenChat);
-
+        
 
         fetch($SCRIPT_ROOT + '/predict' , {
             method: 'POST',
@@ -131,7 +132,7 @@ class Chatbox {
             textField2.value = '';
         }).catch((error) => {
             console.error( 'Error:', error);
-            this.updateChatText(chatbox);
+            this.updateChatText(chatbox, fullscreenChat);
             textField1.value = '';
             textField2.value = '';
         });
@@ -139,8 +140,9 @@ class Chatbox {
          
     }
 
-    updateChatText(chatbox, fullscreeenChat) {
+    updateChatText(chatbox, fullscreenChat) {
         var html = '';
+        console.log(fullscreenChat)
         console.log(this.messages);
         this.messages.slice().reverse().forEach(function(item,) {
             if (item.name === "Sam")
@@ -155,7 +157,7 @@ class Chatbox {
 
         const chatmessage1 = chatbox.querySelector('.chatbox__messages');
         chatmessage1.innerHTML = html
-        const chatmessage2 = fullscreeenChat.querySelector('.chatbox__messages');
+        const chatmessage2 = fullscreenChat.querySelector('.chatbox__messages');
         chatmessage2.innerHTML = html
 
 
@@ -169,30 +171,3 @@ const chatbox = new Chatbox()
 
 chatbox.display()
 
-/*
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-*/
