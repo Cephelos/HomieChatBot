@@ -5,8 +5,8 @@
 }
 
 :root {
-    --primary: #2A455E;
-    --secondary: #4AA8BC;
+    --primary: #6ACEC3;
+    --secondary: #E5FBF8;
 }
 
 body {
@@ -18,17 +18,17 @@ body {
 }
 
 html {
-    --primaryGradient: linear-gradient(93.12deg, #2A455E 0.52%, #4AA8BC 100%);
-    --secondaryGradient: linear-gradient(268.91deg, #4AA8BC -2.14%, #2A455E 99.69%);
+    --primaryGradient: linear-gradient(93.12deg, var(--primary) 0.52%, var(--secondary) 100%);
+    --secondaryGradient: linear-gradient(268.91deg, var(--secondary) -2.14%, var(--primary) 99.69%);
     --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
-    --primary: #2A455E;
+    --primary: var(--primary);
     height: 100%
 }
 
 .bg {
     /* The image used */
-    background-image: url('images/Backgrounds/RupaHealth Background.png');
+    background-image: url('images/Backgrounds/Homie Background.png');
   
     /* Full height */
     height: 100%; 
@@ -74,7 +74,7 @@ html {
 
 .send__button {
     padding: 9px;
-    background: #4AA8BC;
+    background: var(--secondary);
     border: none;
     outline: none;
     cursor: pointer;
@@ -92,7 +92,7 @@ html {
 
 .enlarge__button {
     padding: 9px;
-    background: #4AA8BC;
+    background: var(--secondary);
     border: none;
     outline: none;
     cursor: pointer;
@@ -115,7 +115,7 @@ html {
 }
 
 .messages__item {
-    background: paleturquoise;
+    background: var(--secondary);
     max-width: 60.6%;
     width: fit-content;
 }
@@ -347,7 +347,7 @@ html {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #2A455E;
+    background-color: var(--primary);
     color: white;
 height:7%;
 }
