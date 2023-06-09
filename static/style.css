@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+:root {
+    --primary: #2A455E;
+    --secondary: #4AA8BC;
+}
+
 body {
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
@@ -13,17 +18,17 @@ body {
 }
 
 html {
-    --primaryGradient: linear-gradient(93.12deg, #6ACEC3 0.52%, #E5FBF8 100%);
-    --secondaryGradient: linear-gradient(268.91deg, #E5FBF8 -2.14%, #6ACEC3 99.69%);
+    --primaryGradient: linear-gradient(93.12deg, #2A455E 0.52%, #4AA8BC 100%);
+    --secondaryGradient: linear-gradient(268.91deg, #4AA8BC -2.14%, #2A455E 99.69%);
     --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
-    --primary: #6ACEC3;
+    --primary: #2A455E;
     height: 100%
 }
 
 .bg {
     /* The image used */
-    background-image: url('images/Backgrounds/Homie Background.jpg');
+    background-image: url('images/Backgrounds/RupaHealth Background.png');
   
     /* Full height */
     height: 100%; 
@@ -69,7 +74,7 @@ html {
 
 .send__button {
     padding: 9px;
-    background: #E5FBF8;
+    background: #4AA8BC;
     border: none;
     outline: none;
     cursor: pointer;
@@ -87,7 +92,7 @@ html {
 
 .enlarge__button {
     padding: 9px;
-    background: #E5FBF8;
+    background: #4AA8BC;
     border: none;
     outline: none;
     cursor: pointer;
@@ -110,7 +115,7 @@ html {
 }
 
 .messages__item {
-    background: palegreen;
+    background: paleturquoise;
     max-width: 60.6%;
     width: fit-content;
 }
@@ -174,13 +179,13 @@ html {
 .chatbox__heading--header {
     text-align: left;
     font-size: 1.2rem;
-    color: black;
+    color: white;
 }
 
 .chatbox__description--header {
     text-align: left;
     font-size: .9rem;
-    color: black;
+    color: white;
 }
 
 /* Messages */
@@ -342,7 +347,7 @@ html {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #6ACEC3;
+    background-color: #2A455E;
     color: white;
 height:7%;
 }
