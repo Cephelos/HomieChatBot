@@ -109,8 +109,7 @@ class Chatbox {
         textField1.value = '';
         textField2.value = '';
         this.updateChatText(chatbox, fullscreenChat);
-        
-
+    
         fetch($SCRIPT_ROOT + '/predict' , {
             method: 'POST',
             body: JSON.stringify({ message: text1}),
