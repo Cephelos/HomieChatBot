@@ -13,7 +13,7 @@ from langchain.prompts import PromptTemplate
 import pinecone
 import os
 
-os.environ["OPENAI_API_KEY"] = "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"
+
 os.environ["APIFY_API_TOKEN"] = "apify_api_vYzWRLX7dHb1H4qE7WjjsPhNPNoMf52QVzli"
 
 PINECONE_API_KEY = "bab0e3e6-b740-4586-9098-7c515b6abd47"
@@ -79,7 +79,7 @@ PROMPT = PromptTemplate(
 chain_type_kwargs = {"prompt": PROMPT}
 
 llm = ChatOpenAI(
-    openai_api_key= os.getenv("API_Key"),
+    openai_api_key= os.environ["OPENAI_API_KEY"],
     model_name="gpt-3.5-turbo",
     temperature=0.0,
 )
